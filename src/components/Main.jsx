@@ -14,7 +14,7 @@ class Main extends React.Component {
                     <Route exact path='/' component={Dealerships}/>
                     <Route exact path='/about' component={About}/>
                     <Route exact path='/dealership/:dealership_id/car/:id' component={Car} />
-                    <Route path='/dealership/:id' component={Dealership} />
+                    <Route exact path='/dealership/:id' component={Dealership} />
                 </Switch>
             </div>
         )

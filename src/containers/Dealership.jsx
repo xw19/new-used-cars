@@ -1,29 +1,32 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'react-materialize'
 import { connect } from 'react-redux'
-import { fetchDealership } from '../actions'
-import Loader from '../components/Loader'
-import CarList from '../components/CarList'
+import Cars from './Cars'
 
 class Dealership extends Component {
-  componentDidMount() {
-    this.props.dispatch(fetchDealership(this.props.match.params.id))
+  constructor(props) {
+    super(props)
+    this.dealership = null
   }
-  render () {
-    if ( this.props.fetching ) {
-      return (
-        <Loader />
-      )
+
+  componentWillMount() {
+    let dealerships = this.props.dealerships
+    let dsp = dealerships.filter((dealership) => (dealership.id === parseInt(this.props.match.params.id, 10)))
+    if (dsp.length > 0) {
+      this.dealership = dsp[0]
     }
-    if ( this.props.fetched && this.props.dealership ) {
+  }
+
+  render () {
+    if ( this.dealership ) {
       return (
         <div>
           <Row>
             <Col s={12}>
-              <h1>{this.props.dealership.name}</h1>
+              <h1>{this.dealership.name}</h1>
             </Col>
           </Row>
-          <CarList cars={this.props.dealership.models} dealershipid={this.props.match.params.id} />
+          <Cars dealershipid={this.dealership.id}/>
         </div>
       )
     }
@@ -34,7 +37,7 @@ class Dealership extends Component {
 }
 
 function mapStateToProps(state) {
-  return { dealership: state.dealershipReducer.dealership, fetched: state.dealershipReducer.fetched, fetching:  state.dealershipReducer.fetching, error: state.dealershipReducer.error }
+  return { dealerships: state.dealershipsReducer.dealerships }
 }
 
 export default connect(mapStateToProps)(Dealership)

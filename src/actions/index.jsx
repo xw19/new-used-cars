@@ -1,5 +1,5 @@
 import axios from 'axios'
-const API_URL = 'https://cartruckdealerships.herokuapp.com'
+const API_URL = 'http://localhost:3000'  //'https://cartruckdealerships.herokuapp.com'
 
 export function fetchDealerships() {
   return(dispatch) => {
@@ -10,11 +10,11 @@ export function fetchDealerships() {
   }
 }
 
-export function fetchDealership(id) {
+export function fetchCars(dealership_id) {
   return(dispatch) => {
     dispatch({
-      type: "FETCH_DEALERSHIP",
-      payload: axios.get(API_URL + '/api/v1/dealerships/' + id)
+      type: "FETCH_CARS",
+      payload: axios.get(API_URL + '/api/v1/dealerships/' + dealership_id + '/models')
     })
   }
 }

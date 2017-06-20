@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
-import dealershipReducer from './dealershipReducer'
 import dealershipsReducer from './dealershipsReducer'
 import carReducer from './carReducer'
+import carsReducer from './carsReducer'
 
 const rootReducer = combineReducers({
-  dealershipReducer,
   dealershipsReducer,
+  carsReducer,
   carReducer
 })
 
