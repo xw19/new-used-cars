@@ -19,8 +19,13 @@ class Car extends Component {
       return (
         <div>
           <Row>
-            <Col s={6} offset='s3'>
+            <Col s={12}>
               <h1>{this.props.car.brand} {this.props.car.name}</h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col s={12} m={8} offset='m2' className='center-align'>
+              <img src={this.props.car.image} alt={this.props.car.name} width='500' height='250' />
             </Col>
           </Row>
           <Row>

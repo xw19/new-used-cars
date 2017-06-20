@@ -19,7 +19,7 @@ class Dealership extends Component {
       return (
         <div>
           <Row>
-            <Col s={6} offset='s3'>
+            <Col s={12}>
               <h1>{this.props.dealership.name}</h1>
             </Col>
           </Row>
@@ -34,7 +34,6 @@ class Dealership extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state)
   return { dealership: state.dealershipReducer.dealership, fetched: state.dealershipReducer.fetched, fetching:  state.dealershipReducer.fetching, error: state.dealershipReducer.error }
 }
 

@@ -8,7 +8,7 @@ const CarsList = ({cars, dealershipid}) => {
       {cars.map(car => (
         <Col s={3} key={car.id}>
           <Card className='small'
-          	header={<CardTitle image={"http://lorempixel.com/200/160/transport/3/"}>{car.brand} {car.name}</CardTitle>}
+          	header={<CardTitle image={car.thumb}>{car.brand} {car.name}</CardTitle>}
             key={car.id}
           	actions={[<Link to={`/dealership/${dealershipid}/car/${car.id}`} key={car.id}>Link to {car.brand} {car.name}</Link>]}>
             car description
