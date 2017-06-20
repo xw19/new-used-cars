@@ -6,7 +6,7 @@ const CarsList = ({cars, dealershipid}) => {
   return (
     <Row>
       {cars.map(car => (
-        <Col s={3} key={car.id}>
+        <Col m={4} s={12} key={car.id}>
           <Card className='small'
           	header={<CardTitle image={car.thumb}>{car.brand} {car.name}</CardTitle>}
             key={car.id}

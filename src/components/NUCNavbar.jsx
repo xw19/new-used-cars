@@ -1,9 +1,10 @@
 import React from 'react'
-import {Navbar, NavItem} from 'react-materialize'
+import {Navbar} from 'react-materialize'
+import { Link } from 'react-router-dom'
 
 const NUCNavbar = () => (
   <Navbar brand='New Used Cars' right>
-      <NavItem href='/about'>About</NavItem>
+    <Link to='/about'>About</Link>
   </Navbar>
 )
 

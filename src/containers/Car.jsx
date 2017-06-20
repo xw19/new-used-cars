@@ -20,7 +20,7 @@ class Car extends Component {
         <div>
           <Row>
             <Col s={12}>
-              <h1>{this.props.car.brand} {this.props.car.name}</h1>
+              <h1 className='h2'>{this.props.car.brand} {this.props.car.name}</h1>
             </Col>
           </Row>
           <Row>
@@ -29,10 +29,10 @@ class Car extends Component {
             </Col>
           </Row>
           <Row>
-            <Col s={6}>
+            <Col s={12} m={6}>
               <h2>YEAR: {this.props.car.year}</h2>
             </Col>
-            <Col s={6}>
+            <Col s={12} m={6}>
               <h2>PRICE: {this.props.car.price}</h2>
             </Col>
           </Row>

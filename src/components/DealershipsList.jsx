@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const DealershipsList = ({dealerships}) => (
   <Row>
     {dealerships.map(dealership => (
-      <Col s={6} key={dealership.id}>
+      <Col s={12} m={6} key={dealership.id}>
         <Card className='small'
         	header={<CardTitle image={dealership.logo}>{dealership.name}</CardTitle>}
           key={dealership.id}
