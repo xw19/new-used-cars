@@ -1,5 +1,7 @@
 {
     "name": "New Used Car",
+    "short_name": "NUC",
+    "start_url": "/",
     "icons": [
         {
             "src": "/android-chrome-512x512.png",
